@@ -3,7 +3,9 @@ using UnityEngine;
 public class LevelGenerator:MonoBehaviour
 {
     private Grid grid;
+    [Header("基底地图")]
     [SerializeField] private Texture2D baseMap;
+    [Header("拼图地图")]
     [SerializeField] private Texture2D puzzleMap;
 
     [Header("通过颜色映射到预制体,分别是基底层的映射和拼图层的映射")]
