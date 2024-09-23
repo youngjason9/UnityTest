@@ -145,6 +145,8 @@ public class _GameManager : MonoBehaviour
         // }
 
          levelGenerator.LevelInit(Level,Count,grid);
+
+         
     }
 
     public void GameOver()

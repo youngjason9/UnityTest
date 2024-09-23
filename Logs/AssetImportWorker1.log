@@ -233,6 +233,7 @@ Unloading 4038 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 42 unused Assets / (216.9 KB). Loaded Objects now: 4510.
 Memory consumption went from 154.9 MB to 154.7 MB.
 Total: 3.339500 ms (FindLiveObjects: 0.272700 ms CreateObjectMapping: 0.091000 ms MarkObjects: 2.780800 ms  DeleteObjects: 0.194000 ms)
+<<<<<<< HEAD
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -300,6 +301,8 @@ Unloading 4038 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 42 unused Assets / (217.1 KB). Loaded Objects now: 4514.
 Memory consumption went from 156.8 MB to 156.6 MB.
 Total: 4.739900 ms (FindLiveObjects: 0.412700 ms CreateObjectMapping: 0.124500 ms MarkObjects: 3.939400 ms  DeleteObjects: 0.262000 ms)
+=======
+>>>>>>> main
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):

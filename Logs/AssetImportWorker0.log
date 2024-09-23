@@ -257,6 +257,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+<<<<<<< HEAD
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
@@ -332,3 +333,5 @@ Received Import Request.
 Start importing Assets/readme/Readme2024.9.21.docx using Guid(5c6fbd28d8d1f654f8e5920cd3d69373) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e880cb9f666c57591740213530ebc12') in 0.010350 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
+=======
+>>>>>>> main
