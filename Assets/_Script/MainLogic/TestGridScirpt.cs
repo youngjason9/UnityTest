@@ -85,6 +85,6 @@ public class TestGridScirpt : MonoBehaviour
         }
     }
 
-    //��קƴͼ����һ���¼��������е�������صȻ������Ҫ��������¼���������Ӧ�Ĵ���������
+    //拖拽拼图块是一个事件，场景中的人物，机关等活动对象都需要监听这个事件，并绑定相应的处理函数。
 }
 */

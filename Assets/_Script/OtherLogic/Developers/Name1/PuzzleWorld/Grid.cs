@@ -14,8 +14,8 @@ public class Grid
     private float cellSize;
     private Vector3 originPosition;
     private Vector3[,] gridCenter;
-    private GameObject[,] puzzles;   //Æ´Í¼
-    private GameObject[,] bases;    //»ùµ×
+    private GameObject[,] puzzles;   //æ‹¼å›¾
+    private GameObject[,] bases;    //åŸºåº•
 
     public int Width { get { return width; } }
     public int Height { get { return height; } }
@@ -48,7 +48,7 @@ public class Grid
 
 
     /// <summary>
-    /// ¸ù¾İ¸ñ×ÓÏÂ±ê»ñÈ¡ÊÀ½ç×ø±ê
+    /// æ ¹æ®æ ¼å­ä¸‹æ ‡è·å–ä¸–ç•Œåæ ‡
     /// </summary>
     private Vector3 GetWorldPosition(int x, int y)      
     {
@@ -56,7 +56,7 @@ public class Grid
     }
 
     /// <summary>
-    /// ¸ù¾İÊÀ½ç×ø±ê»ñÈ¡¸ñ×ÓÏÂ±ê
+    /// æ ¹æ®ä¸–ç•Œåæ ‡è·å–æ ¼å­ä¸‹æ ‡
     /// </summary>
     public void GetXY(Vector3 position, out int x, out int y)
     {
@@ -72,7 +72,7 @@ public class Grid
 
 
     /// <summary>
-    /// ¸ù¾İ¸ñ×ÓÏÂ±ê»ñÈ¡¸ñ×ÓÖĞĞÄ×ø±ê
+    /// æ ¹æ®æ ¼å­ä¸‹æ ‡è·å–æ ¼å­ä¸­å¿ƒåæ ‡
     /// </summary>
     public Vector3 GetGridCenter(int x, int y)
     {
@@ -80,7 +80,7 @@ public class Grid
     }
 
     /// <summary>
-    /// ¸ù¾İÊÀ½ç×ø±ê»ñÈ¡¸ñ×ÓÖĞĞÄ×ø±ê
+    /// æ ¹æ®ä¸–ç•Œåæ ‡è·å–æ ¼å­ä¸­å¿ƒåæ ‡
     /// </summary>
     public Vector3 GetGridCenter(Vector3 position)
     {
@@ -101,7 +101,7 @@ public class Grid
         }
     }
 
-//---------ÒÔÏÂÎªÆ´Í¼Ïà¹Ø-----
+//---------ä»¥ä¸‹ä¸ºæ‹¼å›¾ç›¸å…³-----
     public void SetBase(int x, int y, GameObject baseObj)
     {
         Vector3 basePos = GetGridCenter(x, y);
@@ -112,7 +112,7 @@ public class Grid
             baseObj.GetComponent<Brick>().SetXY(x, y);
         }
         else{
-            Debug.LogWarning($"[{x},{y}]Õâ¸öµØ·½²»ÄÜ¹»·ÅÖÃ»ùµ×!");
+            Debug.LogWarning($"[{x},{y}]è¿™ä¸ªåœ°æ–¹ä¸èƒ½å¤Ÿæ”¾ç½®åŸºåº•!");
         }
     }
 
@@ -131,12 +131,12 @@ public class Grid
             puzzles[x, y] = puzzle;
             puzzle.GetComponent<Brick>().SetXY(x,y);
 
-            //TODO£º·ÅÉÏÈ¥Ö®ºó£¬ĞèÒªµ÷ÓÃ·ÅÖÃ´¦»ùµ×µÄÂß¼­
+            //TODOï¼šæ”¾ä¸Šå»ä¹‹åï¼Œéœ€è¦è°ƒç”¨æ”¾ç½®å¤„åŸºåº•çš„é€»è¾‘
             bases[x, y].GetComponent<BaseBrick>().BaseFuncRun();
-            Debug.Log($"bases[{x},{y}]±»µ÷ÓÃÁË");
+            Debug.Log($"bases[{x},{y}]è¢«è°ƒç”¨äº†");
         }
         else{
-            Debug.LogWarning("Õâ¸öµØ·½²»ÄÜ¹»·ÅÖÃÆ´Í¼!");
+            Debug.LogWarning("è¿™ä¸ªåœ°æ–¹ä¸èƒ½å¤Ÿæ”¾ç½®æ‹¼å›¾!");
         }
     }
 
@@ -166,14 +166,14 @@ public class Grid
             puzzle.GetComponent<Brick>().SetXY(x, y);
             puzzles[oldx, oldy] = null;
 
-            //TODO£º·ÅÉÏÈ¥Ö®ºó£¬ĞèÒªµ÷ÓÃ·ÅÖÃ´¦»ùµ×µÄÂß¼­
+            //TODOï¼šæ”¾ä¸Šå»ä¹‹åï¼Œéœ€è¦è°ƒç”¨æ”¾ç½®å¤„åŸºåº•çš„é€»è¾‘
             bases[x, y].GetComponent<BaseBrick>().BaseFuncRun();
             bases[oldx, oldy].GetComponent<BaseBrick>().BaseFuncStop();
             return true;
         }
         else{
-            //Debug.Log("Õâ¸öµØ·½²»ÄÜ¹»·ÅÖÃÆ´Í¼");
-            //»Øµ¯»Ø»ØÀ´µÄÎ»ÖÃ
+            //Debug.Log("è¿™ä¸ªåœ°æ–¹ä¸èƒ½å¤Ÿæ”¾ç½®æ‹¼å›¾");
+            //å›å¼¹å›å›æ¥çš„ä½ç½®
             puzzle.transform.position = GetGridCenter(oldx, oldy);
             return false;
         }

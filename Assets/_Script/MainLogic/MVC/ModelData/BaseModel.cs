@@ -26,7 +26,7 @@ public class BaseModel
 
     private event Action<BaseModel> OnValueChanged;
 
-    //³õÊ¼»¯Êı¾İ
+    //åˆå§‹åŒ–æ•°æ®
     public void InitData(int level, float time, int stepCount)
     {
         this.level = PlayerPrefs.GetInt("LevelValue",1);
@@ -34,7 +34,7 @@ public class BaseModel
         this.stepCount = PlayerPrefs.GetInt("StepCountValue",3);
     }
 
-    //¸üĞÂÊı¾İ
+    //æ›´æ–°æ•°æ®
     public void UpdateData(int level, int stepCount)
     {
         this.level = level;
@@ -50,7 +50,7 @@ public class BaseModel
         SaveData();
     }
 
-    //´æ´¢Êı¾İ
+    //å­˜å‚¨æ•°æ®
     public void SaveData()
     {
         PlayerPrefs.SetInt("LevelValue", level);
@@ -60,19 +60,19 @@ public class BaseModel
         TriggerEvent();
     }
 
-    //×¢²áÊÂ¼ş
+    //æ³¨å†Œäº‹ä»¶
     public void AddEvent(Action<BaseModel> func)
     {
         OnValueChanged += func;
     }
 
-    //ÒÆ³ıÊÂ¼ş
+    //ç§»é™¤äº‹ä»¶
     public void RemoveEvent(Action<BaseModel> func)
     {
         OnValueChanged -= func;
     }
 
-    //´¥·¢ÊÂ¼ş
+    //è§¦å‘äº‹ä»¶
     private void TriggerEvent()
     {
         OnValueChanged?.Invoke(this);

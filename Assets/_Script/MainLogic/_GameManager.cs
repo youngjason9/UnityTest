@@ -24,7 +24,7 @@ public class _GameManager : MonoBehaviour
         }
     }
 
-    //ÊµÑéĞÔUI¼Ü¹¹µÄ²âÊÔ±äÁ¿
+    //å®éªŒæ€§UIæ¶æ„çš„æµ‹è¯•å˜é‡
     public Action OnPuzzleDrug;
     public Action OnPuzzleSetDown;
 
@@ -34,18 +34,18 @@ public class _GameManager : MonoBehaviour
 
     private BaseModel baseModel;
 
-    /// ÓëÓÎÏ·Âß¼­ÓĞ¹ØµÄ±äÁ¿
+    /// ä¸æ¸¸æˆé€»è¾‘æœ‰å…³çš„å˜é‡
     private Grid grid;
-    [SerializeField] private LevelGenerator levelGenerator;   //¹Ø¿¨Éú³ÉÆ÷
+    [SerializeField] private LevelGenerator levelGenerator;   //å…³å¡ç”Ÿæˆå™¨
     [SerializeField] private int width = 7;
     [SerializeField] private int height = 3;
     [SerializeField] private float cellSize = 1f;
     [SerializeField] private Vector3 originPos;
-    [SerializeField] private int x,y;   //Êó±êµ±Ç°Ëù´¦µÄ¸ñ×Ó×ø±ê
+    [SerializeField] private int x,y;   //é¼ æ ‡å½“å‰æ‰€å¤„çš„æ ¼å­åæ ‡
     [SerializeField] private GameObject baseBrick;
     [SerializeField] private GameObject puzzleBrick;
 
-    private curCatchPuzzle curCatchBrick;   //Êó±êµ±Ç°×¥×¡µÄ·½¿é
+    private curCatchPuzzle curCatchBrick;   //é¼ æ ‡å½“å‰æŠ“ä½çš„æ–¹å—
 
     public event Action  OnMouseDown;
     public event Action  OnMouseMove;
@@ -84,7 +84,7 @@ public class _GameManager : MonoBehaviour
     {
         UpdateTimeDate();
 
-        //Êó±ê¿ØÖÆÆ´Í¼ÒÆ¶¯
+        //é¼ æ ‡æ§åˆ¶æ‹¼å›¾ç§»åŠ¨
         if(Input.GetMouseButtonDown(0)){
             OnMouseDown?.Invoke();
         }
@@ -117,12 +117,12 @@ public class _GameManager : MonoBehaviour
     }
 
 
-//----¹ÜÀíÓÎÏ·½ø³ÌµÄº¯Êı----
+//----ç®¡ç†æ¸¸æˆè¿›ç¨‹çš„å‡½æ•°----
     /// <summary>
-    /// ÓÎÏ·¿ªÊ¼Ê±µ÷ÓÃµÄº¯Êı£¬Ëû»á½øĞĞÍø¸ñºÍËûÆäÖĞĞÅÏ¢µÄ³õÊ¼»¯
+    /// æ¸¸æˆå¼€å§‹æ—¶è°ƒç”¨çš„å‡½æ•°ï¼Œä»–ä¼šè¿›è¡Œç½‘æ ¼å’Œä»–å…¶ä¸­ä¿¡æ¯çš„åˆå§‹åŒ–
     /// </summary>
-    /// <param name="Count">¿ÉÒÆ¶¯²½Êı</param>
-    /// <param name="Level">µ±Ç°¹Ø¿¨</param>
+    /// <param name="Count">å¯ç§»åŠ¨æ­¥æ•°</param>
+    /// <param name="Level">å½“å‰å…³å¡</param>
     public void GameStart(int Count, int Level)
     {
         CanMoveCount = Count;
@@ -130,8 +130,8 @@ public class _GameManager : MonoBehaviour
 
         grid = new Grid(width, height, cellSize, originPos);
 
-        //ÁÙÊ±³õÊ¼»¯Ò»Ğ©²âÊÔÓÃµÄ×©¿é
-        //TODO£º³õÊ¼»¯»ùµ××©¿é
+        //ä¸´æ—¶åˆå§‹åŒ–ä¸€äº›æµ‹è¯•ç”¨çš„ç –å—
+        //TODOï¼šåˆå§‹åŒ–åŸºåº•ç –å—
         // for(x = 0; x < width; x++){
         //     for(y = 0; y < height; y++){
         //         grid.SetBase(x, y, Instantiate(baseBrick));
@@ -155,7 +155,7 @@ public class _GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-//----¹ÜÀíÓÎÏ·Êı¾İºÍÂß¼­µÄº¯Êı----
+//----ç®¡ç†æ¸¸æˆæ•°æ®å’Œé€»è¾‘çš„å‡½æ•°----
     private void GetXYFromMousePos()
     {
         Vector3 mousePos = Input.mousePosition;
@@ -174,10 +174,10 @@ public class _GameManager : MonoBehaviour
         {
             curCatchBrick.oldx = x;
             curCatchBrick.oldy = y;
-            //Debug.Log($"×¥×¡ÁËÆ´Í¼{curCatchBrick.puzzle.name},ËüµÃÀÏÎ»ÖÃÊÇ{curCatchBrick.oldx},{curCatchBrick.oldy}");
+            //Debug.Log($"æŠ“ä½äº†æ‹¼å›¾{curCatchBrick.puzzle.name},å®ƒå¾—è€ä½ç½®æ˜¯{curCatchBrick.oldx},{curCatchBrick.oldy}");
         }
         else {
-            //Debug.Log("¸Ã´¦Ã»ÓĞ¿É×¥È¡µÄÆ´Í¼");
+            //Debug.Log("è¯¥å¤„æ²¡æœ‰å¯æŠ“å–çš„æ‹¼å›¾");
         }
     }
 
@@ -196,10 +196,10 @@ public class _GameManager : MonoBehaviour
         {return;}
         
         if(grid.SetPuzzleDown(curCatchBrick.oldx, curCatchBrick.oldy, x, y, curCatchBrick.puzzle)){
-            //Debug.Log("Æ´Í¼·ÅÏÂÁË");
+            //Debug.Log("æ‹¼å›¾æ”¾ä¸‹äº†");
         }
         else {
-            //Debug.Log("·ÅÏÂÊ§°Ü£¬¸ÃÎ»ÖÃÒÑÓĞÆäËûÆ´Í¼");
+            //Debug.Log("æ”¾ä¸‹å¤±è´¥ï¼Œè¯¥ä½ç½®å·²æœ‰å…¶ä»–æ‹¼å›¾");
         }
         curCatchBrick.puzzle = null;
     }
@@ -210,7 +210,7 @@ public class _GameManager : MonoBehaviour
     {
         if(CanMoveCount > 0) {
             CanMoveCount--;
-            Debug.Log("Ê£Óà¿ÉÒÆ¶¯´ÎÊı£º"  + CanMoveCount);
+            Debug.Log("å‰©ä½™å¯ç§»åŠ¨æ¬¡æ•°ï¼š"  + CanMoveCount);
         }
     }
 
@@ -220,7 +220,7 @@ public class _GameManager : MonoBehaviour
             return true;
         }
         else {
-            Debug.Log("Ê£Óà¿ÉÒÆ¶¯´ÎÊı²»×ã£¬ÎŞ·¨ÒÆ¶¯");
+            Debug.Log("å‰©ä½™å¯ç§»åŠ¨æ¬¡æ•°ä¸è¶³ï¼Œæ— æ³•ç§»åŠ¨");
             return false;
         }
     }

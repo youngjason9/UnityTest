@@ -5,20 +5,20 @@ using UnityEngine.UI;
 
 public class BaseView : MonoBehaviour
 {
-    //¿Ø¼şµÄ²éÕÒ
+    //æ§ä»¶çš„æŸ¥æ‰¾
     [SerializeField] private Text stepCountText;
     [SerializeField] private Text timeText;
     [SerializeField] private Text levelText;
 
-    //¿Ø¼şµÄĞŞ¸Ä·½·¨
+    //æ§ä»¶çš„ä¿®æ”¹æ–¹æ³•
     public void UpdateInfo(int stepCount, int level)
     {
-        stepCountText.text = "Ê£Óà²½Êı£º" + stepCount.ToString();
-        levelText.text = "¹Ø¿¨£º" + level.ToString();
+        stepCountText.text = "å‰©ä½™æ­¥æ•°ï¼š" + stepCount.ToString();
+        levelText.text = "å…³å¡ï¼š" + level.ToString();
     }
 
     public void UpdateTime(float time)
     {
-        timeText.text = "Ê±¼ä£º" + time.ToString("F0");
+        timeText.text = "æ—¶é—´ï¼š" + time.ToString("F0");
     }
 }

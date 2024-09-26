@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
             }
         }
         else {
-            //ִ��һЩ��ͣС�˶������߼�
+            //执行一些暂停小人动作的逻辑
         }
     }
 
@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
     public void TimeStop()
     {
         canMove = false;
-        velocity = rb.velocity;     //����ʱ��ֹͣǰ���ٶ�
+        velocity = rb.velocity;     //保存时间停止前的速度
         rb.velocity = Vector2.zero;
         rb.gravityScale = 0f;
     }
@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
     
 
 
-    //������������������⣺
-    //1. ��С����Ծ����������һ��ǽ�ڵ�ʱ��Ӧ����Ҫ˳��ǽ�ڻ�����������Ŀǰ��ͣ���ڿ���(KO)
-    //2. С�������ķ���λ�ô���ש��Ӧ���ǲ��ܱ����ѡ���ƶ��ģ�Ŀǰ�ǿ��Ա�ѡ�е�(KO)
+    //还有两个待解决的问题：
+    //1. 当小人跳跃起来贴到另一个墙壁的时候，应该是要顺着墙壁滑落下来，而目前是停滞在空中(KO)
+    //2. 小人所处的方格位置处的砖块应该是不能被鼠标选中移动的，目前是可以被选中的(KO)
 }

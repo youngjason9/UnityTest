@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BaseController : MonoBehaviour
 {
-    //获取View
+    //鑾峰彇View
     private BaseView baseView;
     private BaseModel baseModel;
 
@@ -42,7 +42,7 @@ public class BaseController : MonoBehaviour
         baseModel.RemoveEvent(UpdateViewInfo);
     }
 
-    //更新View
+    //鏇存柊View
     public void UpdateViewInfo(BaseModel baseModel)
     {
         baseView.UpdateInfo(baseModel.StepCount, baseModel.Level);
