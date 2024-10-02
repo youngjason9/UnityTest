@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rui_Test : MonoBehaviour
 {
-    private string name = "jason";
+    private string log = "1";
     // Start is called before the first frame update
     void Start()
     {
