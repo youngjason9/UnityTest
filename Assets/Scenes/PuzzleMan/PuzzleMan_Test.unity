@@ -844,9 +844,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4b9b658f8affd4bb9288b2002c7083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanMoveCount: 3
-  CurrentLevel: 1
-  time: 0
+  canMoveCount: 3
+  currentLevel: 1
+  timer: 0
+  x: 0
+  y: 0
+  baseAndPuzzle:
+    baseBricks: []
+    puzzleBricks: []
+  levelData: []
+  IsEditorMode: 0
+  levelEditor:
+    levelIndex: 0
+    steps: 0
+    width: 0
+    height: 0
+    originPos: {x: 0, y: 0, z: 0}
+    clearMode: 0
 --- !u!4 &665582484
 Transform:
   m_ObjectHideFlags: 0
@@ -894,8 +908,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canCatch: 1
-  canExChange: 0
   hasFlag: 0
+  isBase: 0
 --- !u!212 &826539699
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1116,17 +1130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe1cf4d33616bf40b837003d9082d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 7
-  height: 3
-  tileSize: 10
-  fullBrick: {fileID: 1505408446}
-  puzzelBrick: {fileID: 1929580473}
-  airBirck: {fileID: 826539697}
-  player: {fileID: 105799300}
-  flags:
-  - {fileID: 1196414843}
-  - {fileID: 1601036052}
-  catchIndex: 0000000000000000
 --- !u!4 &1006582535
 Transform:
   m_ObjectHideFlags: 0
@@ -1258,8 +1261,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canCatch: 0
-  canExChange: 0
   hasFlag: 0
+  isBase: 0
 --- !u!212 &1196414845
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1422,6 +1425,7 @@ GameObject:
   - component: {fileID: 1267240334}
   - component: {fileID: 1267240333}
   - component: {fileID: 1267240332}
+  - component: {fileID: 1267240335}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1503,6 +1507,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1267240335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267240331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90dc18818b4dd034c891b0cd616fb4b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1482489675
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,8 +1702,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canCatch: 1
-  canExChange: 0
   hasFlag: 0
+  isBase: 0
 --- !u!61 &1505408450
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1765,8 +1781,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canCatch: 0
-  canExChange: 0
   hasFlag: 0
+  isBase: 0
 --- !u!212 &1601036054
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1979,8 +1995,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canCatch: 0
-  canExChange: 1
   hasFlag: 0
+  isBase: 0
 --- !u!61 &1929580477
 BoxCollider2D:
   m_ObjectHideFlags: 0
