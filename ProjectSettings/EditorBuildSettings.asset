@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/LevelEditorScene.unity
+    guid: f9afd912088030b4ea20a231e42c0471
+  - enabled: 1
+    path: Assets/Scenes/PuzzleMan/PuzzleMan_New.unity
+    guid: a11fc825d5b7523448055a7581e9ef62
   m_configObjects: {}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TestBase : BaseBrick
 {
-    public override void BaseFuncRun()
+    public override void BaseFuncRun(GameObject puzzle)
     {
         Debug.Log("TestBase is running");
     }

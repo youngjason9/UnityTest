@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Animal,ITimeStopAndContinue
 {
     [SerializeField] private bool canMove = true;
     [SerializeField] private float speed = 5f;
@@ -11,13 +11,17 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 velocity;
 
-    private Rigidbody2D rb;
     Vector3 originScale;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        Rb = GetComponent<Rigidbody2D>();
         originScale = transform.localScale;
+       
+    }
+
+    private void OnEnable() 
+    {
         _GameManager.Instance.OnPuzzleDrug += TimeStop;
         _GameManager.Instance.OnPuzzleSetDown += TimeContinue;
     }
@@ -28,10 +32,12 @@ public class PlayerController : MonoBehaviour
         PlayerJump();
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
-        _GameManager.Instance.OnPuzzleDrug -= TimeStop;
-        _GameManager.Instance.OnPuzzleSetDown -= TimeContinue;
+        if(_GameManager.Instance!= null){
+            _GameManager.Instance.OnPuzzleDrug -= TimeStop;
+            _GameManager.Instance.OnPuzzleSetDown -= TimeContinue;
+        }
     }
 
     private void PlayerMove()

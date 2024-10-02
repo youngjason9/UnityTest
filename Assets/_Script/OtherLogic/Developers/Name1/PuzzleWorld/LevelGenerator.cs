@@ -46,9 +46,14 @@ public class LevelGenerator:MonoBehaviour
         foreach(ColorToPrefabs colorToPrefabs in baseColroMappings){
             if(colorToPrefabs.color.Equals(mapPixel)){
                 //生成基底砖块
+                
                 Vector3 pos = new Vector3(x,y);
                 grid.SetBase(pos,Instantiate(colorToPrefabs.brickPrefab));
+                //Debug.Log($"{colorToPrefabs.color}_{colorToPrefabs.brickPrefab.name}_生成了");
                 //Debug.Log(pos + "生成了" + colorToPrefabs.brickPrefab.name);
+            }
+            else{
+                
             }
         }
     }
